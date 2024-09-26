@@ -1,0 +1,84 @@
+// Definir los pines para los LEDs de los semáforos
+int semaforo1Rojo = 2;
+int semaforo1Amarillo = 3;
+int semaforo1Verde = 4;
+int semaforo2Rojo = 5;
+int semaforo2Amarillo = 6;
+int semaforo2Verde = 7;
+int semaforo3Rojo = 8;
+int semaforo3Amarillo = 9;
+int semaforo3Verde = 10;
+int semaforo4Rojo = 11;
+int semaforo4Amarillo = 12;
+int semaforo4Verde = 13;
+
+void setup() {
+  // Configurar los pines como salidas
+  pinMode(semaforo1Rojo, OUTPUT);
+  pinMode(semaforo1Amarillo, OUTPUT);
+  pinMode(semaforo1Verde, OUTPUT);
+  pinMode(semaforo2Rojo, OUTPUT);
+  pinMode(semaforo2Amarillo, OUTPUT);
+  pinMode(semaforo2Verde, OUTPUT);
+  pinMode(semaforo3Rojo, OUTPUT);
+  pinMode(semaforo3Amarillo, OUTPUT);
+  pinMode(semaforo3Verde, OUTPUT);
+  pinMode(semaforo4Rojo, OUTPUT);
+  pinMode(semaforo4Amarillo, OUTPUT);
+  pinMode(semaforo4Verde, OUTPUT);
+}
+
+void loop() {
+  // Semáforo 1 en verde, los demás en rojo
+  digitalWrite(semaforo1Verde, HIGH);
+  digitalWrite(semaforo2Rojo, HIGH);
+  digitalWrite(semaforo3Rojo, HIGH);
+  digitalWrite(semaforo4Rojo, HIGH);
+  delay(5000); // Mantener por 5 segundos
+
+  // Semáforo 1 en amarillo
+  digitalWrite(semaforo1Verde, LOW);
+  digitalWrite(semaforo1Amarillo, HIGH);
+  delay(2000); // Mantener por 2 segundos
+
+  // Semáforo 1 en rojo, semáforo 2 en verde
+  digitalWrite(semaforo1Amarillo, LOW);
+  digitalWrite(semaforo1Rojo, HIGH);
+  digitalWrite(semaforo2Rojo, LOW);
+  digitalWrite(semaforo2Verde, HIGH);
+  delay(5000); // Mantener por 5 segundos
+
+  // Semáforo 2 en amarillo
+  digitalWrite(semaforo2Verde, LOW);
+  digitalWrite(semaforo2Amarillo, HIGH);
+  delay(2000); // Mantener por 2 segundos
+
+  // Semáforo 2 en rojo, semáforo 3 en verde
+  digitalWrite(semaforo2Amarillo, LOW);
+  digitalWrite(semaforo2Rojo, HIGH);
+  digitalWrite(semaforo3Rojo, LOW);
+  digitalWrite(semaforo3Verde, HIGH);
+  delay(5000); // Mantener por 5 segundos
+
+  // Semáforo 3 en amarillo
+  digitalWrite(semaforo3Verde, LOW);
+  digitalWrite(semaforo3Amarillo, HIGH);
+  delay(2000); // Mantener por 2 segundos
+
+  // Semáforo 3 en rojo, semáforo 4 en verde
+  digitalWrite(semaforo3Amarillo, LOW);
+  digitalWrite(semaforo3Rojo, HIGH);
+  digitalWrite(semaforo4Rojo, LOW);
+  digitalWrite(semaforo4Verde, HIGH);
+  delay(5000); // Mantener por 5 segundos
+
+  // Semáforo 4 en amarillo
+  digitalWrite(semaforo4Verde, LOW);
+  digitalWrite(semaforo4Amarillo, HIGH);
+  delay(2000); // Mantener por 2 segundos
+
+  // Semáforo 4 en rojo
+  digitalWrite(semaforo4Amarillo, LOW);
+  digitalWrite(semaforo4Rojo, HIGH);
+  delay(1000); // Mantener por 1 segundo antes de reiniciar el ciclo
+}
